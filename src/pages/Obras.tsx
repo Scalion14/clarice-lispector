@@ -126,13 +126,14 @@ const Obras = () => {
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {obras.map((obra, index) => (
-                <motion.article
+              <motion.article
                   key={obra.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className={`card-literary p-8 ${obra.highlight ? "border-gold/50 bg-card" : ""}`}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className={`card-literary p-8 cursor-pointer group ${obra.highlight ? "border-gold/50 bg-card" : ""}`}
                 >
                   {obra.highlight && (
                     <span className="inline-block text-xs uppercase tracking-widest text-gold mb-4 font-body">
@@ -141,11 +142,11 @@ const Obras = () => {
                   )}
                   
                   <div className="flex items-center gap-3 mb-4">
-                    <BookOpen className="w-5 h-5 text-primary" />
+                    <BookOpen className="w-5 h-5 text-primary group-hover:text-gold transition-colors duration-300" />
                     <span className="text-sm text-muted-foreground font-body">{obra.type}</span>
                   </div>
 
-                  <h3 className="font-display text-2xl text-foreground mb-2">
+                  <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                     {obra.title}
                   </h3>
 
@@ -158,9 +159,9 @@ const Obras = () => {
                     {obra.description}
                   </p>
 
-                  <div className="border-t border-border pt-4">
+                  <div className="border-t border-border pt-4 group-hover:border-gold/50 transition-colors duration-300">
                     <div className="flex items-start gap-2">
-                      <Quote className="w-4 h-4 text-primary/50 mt-1 shrink-0" />
+                      <Quote className="w-4 h-4 text-primary/50 mt-1 shrink-0 group-hover:text-gold transition-colors duration-300" />
                       <p className="font-display italic text-foreground/80">
                         {obra.quote}
                       </p>

@@ -41,17 +41,26 @@ const Biography = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[3/4] bg-secondary rounded-sm overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
+            <div className="aspect-[3/4] bg-secondary rounded-sm overflow-hidden relative group">
+              {/* Placeholder for Clarice's photo - replace src with actual image */}
+              <div className="absolute inset-0 flex items-center justify-center bg-cream-dark">
                 <div className="text-center p-8">
-                  <span className="quote-mark">"</span>
-                  <p className="font-display text-xl italic text-foreground leading-relaxed">
-                    Eu escrevo sem esperança de que o que eu escrevo altere qualquer coisa. 
-                    Não altera. Mas escrevo porque acho que é o que me faz ser.
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full border-2 border-dashed border-primary/30 flex items-center justify-center">
+                    <span className="text-primary/50 text-4xl">📷</span>
+                  </div>
+                  <p className="font-body text-sm text-muted-foreground">
+                    Espaço para foto de Clarice
                   </p>
                 </div>
               </div>
+              {/* Uncomment and add your image:
+              <img 
+                src="/path-to-clarice-photo.jpg" 
+                alt="Clarice Lispector" 
+                className="w-full h-full object-cover"
+              />
+              */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
             </div>
             
             {/* Decorative element */}
